@@ -2,8 +2,7 @@
 #### Syntax
 
 ## Strings ------------------------------------------------
-
-s1 = "hi my name is erin". ## double quotes
+s1 = "hi my name is erin." ## double quotes
 
 s2 = 'how are you?' ## single quotes
 
@@ -13,7 +12,7 @@ multiple lines""" ## triple quotes
 name = "erin"
 age = "25"
 intro = "Hi, I'm " + name + ", I'm " + age
-
+intro
 ## call characters w/in string
 print name[0]
 print name[1]
@@ -23,7 +22,7 @@ print name[2]
 name[0] = "a"
 name = "bob"
 
-## splitting strings is useful
+## splitting strings is useful # useful!!!!
 word_list = intro.split()
 word_list
 
@@ -154,7 +153,7 @@ print tup
 erin_info = {"name" : "Erin", "age" : 25, "pets" : ["Leonard", "Pogo"]}
 
 print erin_info.keys()
-print erin_info.values()
+print erin_info.values()  #no index in here, dictionary
 
 erin_info[0] ##!!!
 erin_info["pets"]
@@ -162,7 +161,7 @@ erin_info["pets"]
 erin_info["last_name"] = "Rossiter"
 print erin_info
 
-
+type(erin_info)
 
 
 
@@ -212,15 +211,15 @@ for i in "hello":
 bye = [i for i in "goodbye"]
 
 
-while len(even_nums) > 1:
+while len(even_nums) > 1:  #unclear
 	print even_nums.pop()
+
 
 print even_nums
 
 
 
 ## Functions ------------------------------------------------
-
 ## Write cleaner code
 ## Allow for easy testing
 ## Allow for easier trouble-shooting
