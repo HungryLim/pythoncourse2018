@@ -80,18 +80,9 @@ def piglatin(txt):
         print ''.join(back)
 
 
+piglatin("final")
 
-
-                
-
-            
-        
-
-
-
-
-
-
+ 
 ## Try/catch is more common when using
 ## someone else's code, scraping, etc. -----------------------------------
 
