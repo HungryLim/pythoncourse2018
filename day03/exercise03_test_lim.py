@@ -1,5 +1,7 @@
 import unittest
-from exercise03 import *
+import os
+os.chdir("C:/Users/wooki/Documents/GitHub/pythoncourse2018/day03")
+from exercise03_lim import *
 
 class exerciseTests(unittest.TestCase):
     

@@ -7,7 +7,7 @@
 ## Syntax errors ## 
 if x == 1:
     print "x equals 1"
-else
+else:
     print "x does not equal 1"
 
 ## Wrong indentation.. ipython helps me here.
@@ -16,12 +16,12 @@ for i in range(1,5):
 
 ## colors help, too
 x = 0
-While x < 5:
+while x < 5:
     x += 1
 print x
 
 ## brackets and parentheses
-print (10*2) + (5*3))
+print (10*2) + (5*3)
 
 
 
@@ -34,6 +34,8 @@ print 5/0
 def runtime_error():
     print 5/0
 
+runtime_error()
+
 def syntax_error():
     If 2 < 4:
         print "hi"
@@ -43,10 +45,12 @@ def syntax_error():
 
 ## I want to print all numbers in this list
 l = [10, 20, 30, 40]
-for i in range(1,4):
+for i in range(0,4):
     print l[i]
 
-
+l = [10, 20, 30, 40]
+for i in range(0,3):
+    print l[i]
 
 
 ## Exceptions ------------------------------------------------
@@ -250,7 +254,8 @@ for i in range(10):
 else:
     print "Loop is over"
 
-
+for n in range(2,10):
+    print n
 
 ## check all digits 2-9
 for n in range(2, 10):
@@ -258,8 +263,9 @@ for n in range(2, 10):
     for x in range(2, n):
         if n % x == 0:
             print "%d equals %d * %d" % (n, x, n//x)
-        else:
-            print "%d is a prime number" % n
+            break 
+    else:
+        print "%d is a prime number" % n
 
 ## How do we fix this loop?
 ## We have 2 semantic errors:
