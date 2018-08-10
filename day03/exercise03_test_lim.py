@@ -1,7 +1,11 @@
 import unittest
+<<<<<<< HEAD:day03/exercise03_test_lim.py
 import os
 os.chdir("C:/Users/wooki/Documents/GitHub/pythoncourse2018/day03")
 from exercise03_lim import *
+=======
+from exercise03_erin import *
+>>>>>>> upstream/master:day03/exercise03_test.py
 
 class exerciseTests(unittest.TestCase):
     
