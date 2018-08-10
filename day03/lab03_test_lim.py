@@ -7,6 +7,9 @@ class labTests(unittest.TestCase):
 	## make sure to account for correct and incorrect input
 
     def test_shout(self):
+        self.assertEqual(4, test_shout("mississippi"))
+        with self.assertRaises(TypeError): test_shout(5)
+        with self.assertRaises(TypeError): test_shout([1,2,3])
 
     def test_reverse(self):
 

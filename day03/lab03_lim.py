@@ -62,32 +62,23 @@ def piglatin(txt):
     if type(txt)!=str:
         raise TypeError, "Not string."
     else:
-        txt="dinio"
+ 
         ex = list(txt)
+ 
         vowels = ['a', 'e', 'i', 'o', 'u']
         first_v = []
-        before_f_v = []
         for i in ex:
             if i in vowels:
                 first_v.append(i)
+                num= ex.index(i)
                 break
+        back= ex[num:len(ex)]
 
-        for i in ex:
-            if i in vowels:
-                break
-            before_f_v.append(i)
+        before=ex[0:num]
+        back.extend(ex[0:num])
+        back.extend("ay")
+        print ''.join(back)
 
-        next=[]
-        for i in ex:
-            if i == first_v[0]:
-                continue
-                next.append()
-                print i 
-            else:
-                print "Loop is over"
-
-
-        result = 
 
 
 
