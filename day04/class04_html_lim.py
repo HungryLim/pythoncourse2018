@@ -12,6 +12,7 @@ import random
 import time
 import os
 
+
 ## Open a web page
 web_address = 'https://polisci.wustl.edu/faculty/specialization'
 web_page = urllib2.urlopen(web_address)
@@ -38,6 +39,12 @@ all_a_tags[22]['href']
 all_a_tags[22]['class']
 
 
+
+
+
+
+
+
 ## Use this info about HTML elements to grab them
 soup.find_all('a', {'class' : "person-view-primary-field"})
 
@@ -47,7 +54,7 @@ len(sections)
 sections[2].a ## FIRST 'a' tag within the 'div' tag
 sections[2].find_all('a') ## ALL 'a' tags within the 'div' tag
 
-
+sections[3].a
 ## Creating a tree of objects
 all_fields = soup.find_all('div')
 randy = all_fields[50]
