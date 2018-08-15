@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 Hi guys.
 Does this go on the second line?
 a
+=======
+Hi guys.Does this go on the second line?a
+b
+c
+Hi guys.Does this go on the second line?a
+>>>>>>> upstream/master
 b
 c
 I got appended!

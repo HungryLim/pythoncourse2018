@@ -12,6 +12,7 @@ with open('test_readfile.txt') as f:
   the_whole_thing = f.read()
   print the_whole_thing
 
+
 ## Read line by line
 with open('test_readfile.txt') as f:
   lines_list = f.readlines()
@@ -35,7 +36,8 @@ f.close()
 
 ## Writing text files ------------------------------------------------
 
-## Writing files is easy, open command takes r, w, a, plus some others
+## Writing files is easy,
+## open command takes r, w, a, plus some others
 with open('test_writefile.txt', 'w') as f:
   ## wipes the file clean and opens it
   f.write("Hi guys.\n")
