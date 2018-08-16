@@ -5,7 +5,7 @@
 ## https://console.developers.google.com/apis/credentials?project=_
 ## need maps and distance APIs enabled
 import imp
-imported_items = imp.load_source('pythoncourse2018-prep', '../../pythoncourse2018-prep/day05/erinkeys/googlekeys.py')
+imported_items = imp.load_source('pythoncourse2018', 'C:/Users/wooki/Documents/GitHub/pythoncourse2018/day05/googlekeys.py')
 gmaps = imported_items.gmaps
 
 whitehouse = '1600 Pennsylvania Avenue, Washington, DC'
@@ -66,7 +66,7 @@ plot1.scatter(attraction_lats, attraction_lons,
 	marker=True)
 
 # Draw
-plot1.draw("my_map.html")
+plot1.draw("C:/Users/wooki/Documents/GitHub/pythoncourse2018/day05/my_map.html")
 
 
 
