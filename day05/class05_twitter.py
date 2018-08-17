@@ -8,7 +8,11 @@ import tweepy
 import imp
 
 ## first arg is folder name, second arg is navigating to file
+<<<<<<< HEAD
 twitter = imp.load_source('pythoncourse2018', 'C:/Users/wooki/Documents/GitHub/pythoncourse2018/day05/googlekeys.py')
+=======
+twitter = imp.load_source('pythoncourse2018', '../../pythoncourse2018-prep/day05/erinkeys/twitterkeys.py')
+>>>>>>> upstream/master
 api = twitter.api
 
 
