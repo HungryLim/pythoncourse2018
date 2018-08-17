@@ -6,7 +6,12 @@
 ## need geocoding and distance matrix APIs enabled
 import imp
 <<<<<<< HEAD
+<<<<<<< HEAD
 imported_items = imp.load_source('pythoncourse2018', 'C:/Users/wooki/Documents/GitHub/pythoncourse2018/day05/googlekeys.py')
+=======
+imported_items = imp.load_source('pythoncourse2018', '../../pythoncourse2018-prep/day05/erinkeys/googlekeys.py')
+
+>>>>>>> upstream/master
 =======
 imported_items = imp.load_source('pythoncourse2018', '../../pythoncourse2018-prep/day05/erinkeys/googlekeys.py')
 
