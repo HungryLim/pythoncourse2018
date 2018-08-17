@@ -5,10 +5,15 @@ import re
 
 ## Load example text --------------------------------------------------------
 
+import os
+
+## setting working directory ------------------------------------------------
+os.chdir("C:/Users/wooki/Documents/GitHub/pythoncourse2018/day06")
+
 ## read in example text
 ## remember, readlines makes a list of each line break in file
 with open("obama-nh.txt", "r") as f:
-	text = f.readlines()
+	text = f.readlines() #.text()
 
 ## How is this file structured?
 ## How does it impact our 'text' object?
@@ -44,7 +49,7 @@ re.findall(r"\n", alltext)
 re.findall(r"\d", alltext) ##\d digits
 re.findall(r"\D", alltext) ##\d non-digits
 re.findall(r"[a]", alltext) ## any chars in []
-re.findall(r"[a-d]", alltext) ## any chars in []
+re.findall(r"[a-dA-Z]", alltext) ## any chars in []
 re.findall(r"[^a-d]", alltext) ## ^ except
 re.findall(r"\w", alltext) ## \w alphanumeric
 re.findall(r"\W", alltext) ## \W non-alphanumeric
@@ -60,8 +65,8 @@ re.findall(r"\d", alltext)
 re.findall(r"\d*", alltext) ## * 0 or more 
 re.findall(r"\d+", alltext) ## + 1 or more
 re.findall(r"\d?", alltext) ## ? 0 or 1
-re.findall(r"\d{3}", alltext) ## {x} exactly x times
-re.findall(r"\d{1,3}", alltext) ## {x, y} from x to y times
+re.findall(r"\d{2}", alltext) ## {x} exactly x times
+re.findall(r"\d{1,2}", alltext) ## {x, y} from x to y times
 
 
 ## Parentheses give us just that portion
@@ -72,7 +77,7 @@ re.findall(r"(Yes) we can", alltext)
 
 ## Exercise: How would we grab 9/11 as it appears in text?
 
-
+re.findall(r"\d{1,2}/\d{1,2}",alltext)
 
 ## Explain what's happening:
 
@@ -109,10 +114,14 @@ re.split(r'(\.)', alltext) ## () splits and keeps separator
 keyword = re.compile(r"America[a-z]*")
 
 ## search file for keyword in line by line version
-for line in text:
+for i, line in enumerate(text):
   if keyword.search(line):
+    print i
     print line 
 
+for line in (text):
+  if keyword.search(line):
+    print line 
 
 pattern = re.compile(r'\d') #Create a regex object
 
@@ -158,7 +167,8 @@ tsearch.group(2) #the second group
 
 
 ## Similar to using () alone, but the text
-## matched by the group is then accessible
+## matched by the group is then accessible 
+#dictionary
 pattern = re.compile(r'(?P<number>\d*)\s(?P<name>\w*)')
 tsearch = pattern.search(t)
 tsearch.groups()
