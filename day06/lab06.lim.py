@@ -13,9 +13,10 @@ with open("obama-nh.txt", "r") as f:
 ## (although you ~might~ think you could do something like
 ## [l for l in obama if "the" not in l]
 
+key=re.compile(r"\b[Tt]he\b")
+key=re.compile(r"\bThe|the\b")
 
-
-keyword = re.compile(r"the\w+")
+keyword = re.compile(r"\sthe\s")
 keyword2 = re.compile(r"The\w+")
 l=[]
 for line in (text):
@@ -30,7 +31,7 @@ len(l)
 
 # TODO: print lines that contain a word of any length starting with s and ending with e
 text2= [x.lower() for x in text]
-key= re.compile(r"s[a-z]e")
+key= re.compile(r"\bs[a-z]*e\b")
 
 find=[]
 for line in text2:
