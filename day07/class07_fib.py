@@ -25,8 +25,24 @@ for i in range(35):
 ## Can you write a recursive function to print n!
 
 def factorial(n):
+<<<<<<< HEAD
     if n == 0:
         return 1
     return factorial(n-1)*n
 
 factorial(1)
+=======
+	if n == 0:
+		return 1
+	return factorial(n-1) * n
+	## if base case:
+		## return something
+	## else:
+		## return a recursive call
+
+
+		
+
+
+
+>>>>>>> upstream/master
