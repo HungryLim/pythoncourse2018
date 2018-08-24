@@ -7,6 +7,10 @@ import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey, and_, or_
 from sqlalchemy.orm import relationship, backref, sessionmaker
+import os
+
+## setting working directory ------------------------------------------------
+os.chdir("C:/Users/wooki/Documents/GitHub/pythoncourse2018/day09")
 
 # - Connect to the local database
 # - The return value of create_engine() is an instance of Engine,
@@ -87,6 +91,7 @@ Base.metadata.create_all(engine)
 # - SQLAlchemy represent info for specific table with Table object
 # So what columns do we have?
 Player.__table__  
+
 
 
 
