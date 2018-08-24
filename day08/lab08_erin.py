@@ -8,10 +8,6 @@ def makeLink(G, node1, node2):
   (G[node2])[node1] = True
   return G 
 
-graph = {}
-graph = makeLink(graph, "a", "b")
-
-
 ## empty graph 
 ring = {} 
 
@@ -36,36 +32,30 @@ print sum([len(ring[node]) for node in ring.keys()])/2
 ## TODO: create a square graph with 256 nodes using the makeLink function
 ## TODO: define a function countEdges
 
-range(1,17)
-
-## empty graph 
-square = {} 
-
-## number of nodes 
-n = 16 
-
-## Add in edges with makeLink function
-for i in range(n):
-  ring = makeLink(ring, i, (i+1)%n)
-  print ring
-
-
-def makeLink(G, node1, node2):
-  if node1 not in G:
-    G[node1] = {}
-  (G[node1])[node2] = "linked"
-  if node2 not in G:
-    G[node2] = {}
-  (G[node2])[node1] = "linked"
-  return G 
-ring={}
-makeLink(ring,2,3)
-
 import math
-n=256
-length_square=math.sqrt(n)
-edges= [1,int(length_square),int(n-length_square+1),n]
-sides= [range(1,edges[1]+1), 1,range(10+4)]
+n = 16
+g = {}
+for i in range(1,n):
+  n_width = int(math.sqrt(n))
+  ## if we are not on a boundary
+  ## i.e., if node is not multiple of our set node width
+  ## then link to next node
+  if i%n_width != 0:
+    makeLink(g, i, i+1)
+  ## if not on last row
+  ## link to node directly below
+  if i <= n-n_width:
+    makeLink(g, i, i+n_width)
+
+
+def count_edges(graph):
+  ## apply len function to each element of graph (how many connections)
+  ## sum up all connections
+  ## divide by 2 since each counted twice in graph (1->2 and 2<-1)
+  return sum(map(len, graph.values()))/2
+
+
+
 
 ##  Social Network
 class Actor(object):
@@ -140,16 +130,33 @@ movies[kb].keys() ## found meryl streep!
 ## for path in allPaths:
 ##   print path
 
+def findAllPaths(graph, start, end, path=[]):
+        path = path + [start]
+        if start == end:
+            return [path]
+        if not graph.has_key(start):
+            return None
+        allpaths = []
+        for node in graph[start]:
+            if node not in path:
+                allpaths.extend(findAllPaths(graph, node, end, path))
+        allpaths = filter(None, allpaths)
+        return allpaths
 
+allpaths = findAllPaths(movies, jr, ms)
 
-
+for path in allpaths:
+  print path
 
 
 ## TODO: implement findShortestPath() to print shorest path between actors
 ## print findShortestPath(movies, ms, ss)
 
+def findShortestPath(graph, start, end):
+    allpaths = findAllPaths(graph, start, end)
+    return min(allpaths, key = len)
 
-
+shortest = findShortestPath(movies, jr, ms)
 
 
 
