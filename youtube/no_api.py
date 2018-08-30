@@ -9,7 +9,7 @@ from itertools import chain
 os.chdir("C:/Users/wooki/Documents/GitHub/pythoncourse2018/youtube")
 
 #import candidate names
-with open("names.csv") as f:
+with open("names_winner.csv") as f:
     reader = csv.reader(f)
     next(reader) # skip header
     data = [r for r in reader]
@@ -19,8 +19,8 @@ data = [item.lower() for item in data]
 data = [item.strip() for item in data]
 data = [item.replace(" ", "+") for item in data]
 
-sample = random.sample(data,10) 
-sample
+#sample = random.sample(data,10) 
+sample=data
 
 videolist=[]
 keywords=[]
@@ -44,7 +44,7 @@ results = zip(titles, keywords,videolist)
 
 
 
-with open('results.csv','wb') as out:
+with open('results_winner.csv','wb') as out:
     csv_out=csv.writer(out)
     csv_out.writerow(['title','keywords','url'])
     for row in results:
